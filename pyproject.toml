@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laya-guard"
+version = "0.1.0"
+description = "A local, safe-by-default AI risk guard for high-risk commands — deterministic rules plus the Laya decision model. Defense-in-depth for the dockndevai MCP suite; the guard only tightens."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "dockndevai", email = "ankitcs17071993@gmail.com" }]
+keywords = ["mcp", "guardrails", "security", "policy", "laya", "risk", "safety", "ai", "agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+]
+dependencies = ["laya>=0.3.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6", "mypy>=1.11"]
+
+[project.scripts]
+laya-guard = "laya_guard.__main__:main"
+
+[project.urls]
+Homepage = "https://dockndevai.github.io/"
+Repository = "https://github.com/dockndevai/laya-guard"
+"Bug Tracker" = "https://github.com/dockndevai/laya-guard/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

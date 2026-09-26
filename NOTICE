@@ -1,0 +1,13 @@
+laya-guard
+Copyright 2026 dockndevai (Ankit Verma)
+
+This MCP server is an independent wrapper around the "laya" library, which it
+depends on but does not include or modify.
+
+  laya — Fast, non-autoregressive System 1 decision engine
+  Copyright Convai Innovations
+  Licensed under the Apache License, Version 2.0
+  https://github.com/NandhaKishorM/laya  ·  https://huggingface.co/convaiinnovations/laya
+
+laya and its model checkpoints are the work of their authors; this project
+claims no ownership of them. See their repository for the full licence terms.

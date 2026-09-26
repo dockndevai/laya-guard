@@ -1,0 +1,27 @@
+{
+  "_comment": "Organization policy for laya-guard. Copy, edit, and point LAYA_GUARD_POLICY at it. Omitted keys fall back to the built-in defaults. Patterns are case-insensitive regex matched against the command text.",
+  "confirm_threshold": "medium",
+  "block_threshold": "critical",
+  "block_pattern_action": "block",
+  "block_patterns": [
+    "rm\\s+-[a-z]*[rf][a-z]*\\s+(-[a-z]+\\s+)*(/|~|\\*|\\$HOME)(\\s|$)",
+    "\\bmkfs(\\.\\w+)?\\b",
+    "\\bdd\\b.*\\bof=/dev/",
+    "(curl|wget)\\b[^|]*\\|\\s*(sudo\\s+)?(ba)?sh\\b",
+    "\\bDROP\\s+(TABLE|DATABASE|SCHEMA)\\b",
+    "\\bkubectl\\s+delete\\s+(ns|namespace|--all)\\b",
+    "\\b(shutdown|reboot|halt|poweroff)\\b"
+  ],
+  "confirm_patterns": [
+    "\\bsudo\\b",
+    "\\brm\\s+-[a-z]*[rf]",
+    "\\bgit\\s+push\\b.*(--force\\b|--force-with-lease|-f\\b)",
+    "\\b(npm\\s+publish|twine\\s+upload)\\b",
+    "\\bdocker\\s+(rm|rmi|system\\s+prune)\\b",
+    "\\bkubectl\\s+(delete|apply)\\b"
+  ],
+  "allow_patterns": [
+    "^\\s*(ls|pwd|whoami|cat|head|tail|grep|find|ps|df|du|echo|env)\\b",
+    "^\\s*git\\s+(status|log|diff|show|branch)\\b"
+  ]
+}
