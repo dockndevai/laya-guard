@@ -20,7 +20,7 @@ A **local, safe-by-default AI risk guard** for high-risk commands — determinis
 ```bash
 pipx install laya-guard
 # fetch the laya model once (downloads are off by default):
-LAYA_GUARD_ALLOW_DOWNLOAD=true python -c "import laya; laya.Router(preload=True)"
+LAYA_GUARD_ALLOW_DOWNLOAD=true $(pipx environment --value PIPX_LOCAL_VENVS)/laya-guard/bin/python -c "import laya; laya.Router(preload=True)"
 laya-guard          # starts the daemon on http://127.0.0.1:8799
 ```
 
