@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=83.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "laya-guard"
-version = "0.1.0"
+version = "0.1.1"
 description = "A local, safe-by-default AI risk guard for high-risk commands — deterministic rules plus the Laya decision model. Defense-in-depth for the dockndevai MCP suite; the guard only tightens."
 readme = "README.md"
 requires-python = ">=3.10"
