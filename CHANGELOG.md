@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-11-09
+
+### Security
+- Raised the `setuptools` build-system requirement from `>=83.0.0` to `>=84.1.0`, fixing
+  [GHSA-xmj3-9gf7-h52w](https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w) (a Windows-only wheel
+  install path that could write a fixed-content `__init__.py` outside the destination directory via
+  attacker-controlled `namespace_packages.txt` metadata). Flagged against the resolved dev
+  environment; no runtime behaviour change. `laya` constraint is unchanged.
+
 ## [0.1.1] - 2026-10-12
 
 ### Security
