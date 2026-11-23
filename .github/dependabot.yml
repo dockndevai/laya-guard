@@ -1,0 +1,18 @@
+version: 2
+updates:
+  # Keep Python dependencies (pyproject.toml) patched; group everything into one weekly PR to reduce noise.
+  # Security updates are raised as soon as an advisory lands, independent of this schedule.
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+  # Keep GitHub Actions pinned to current versions.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
